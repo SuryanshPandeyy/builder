@@ -56,7 +56,28 @@ $('.blocker').on('click', () => {
 $('.compBtn').on('click', () => {
   // console.log("helo");
   $('#compBox').addClass('showComp');
-})
+});
 $('.close').on('click', () => {
   $('#compBox').removeClass('showComp');
-})
+});
+
+
+function allowDrop(ev) {
+  ev.preventDefault();
+  $('#compBox').removeClass('showComp');
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("component", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("component");
+  /* If you use DOM manipulation functions, their default behaviour it not to 
+     copy but to alter and move elements. By appending a ".cloneNode(true)", 
+     you will not move the original element, but create a copy. */
+  var nodeCopy = document.getElementById(data).cloneNode(true);
+  nodeCopy.id = "newComponent"; /* We cannot use the same ID */
+  ev.target.appendChild(nodeCopy);
+}
