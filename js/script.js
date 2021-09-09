@@ -68,16 +68,19 @@ function allowDrop(ev) {
 }
 
 function drag(ev) {
-  ev.dataTransfer.setData("component", ev.target.id);
+  ev.dataTransfer.setData("text/html", ev.target.id) ;
 }
 
 function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("component");
+  ev.preventDefault(); 
+  var data = ev.dataTransfer.getData("text/html");
   /* If you use DOM manipulation functions, their default behaviour it not to 
-     copy but to alter and move elements. By appending a ".cloneNode(true)", 
-     you will not move the original element, but create a copy. */
+  copy but to alter and move elements. By appending a ".cloneNode(true)", 
+  you will not move the original element, but create a copy. */
   var nodeCopy = document.getElementById(data).cloneNode(true);
   nodeCopy.id = "newComponent"; /* We cannot use the same ID */
   ev.target.appendChild(nodeCopy);
+  var div1 = document.querySelector("section");
+  console.log(div1);
 }
+
