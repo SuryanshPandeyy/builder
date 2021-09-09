@@ -1,7 +1,6 @@
 
 var section = document.querySelector("section");
 
-
 let inputLast = document.querySelector("input.active");
 let deviceLast = document.querySelector("div.activeDevice");
 if (inputLast.checked) {
@@ -31,6 +30,7 @@ from the button that has it */
 
   for (let check of input) {
    if (check.getAttribute("data-number") === div.getAttribute("data-number")) {
+    
     section.style.width = div.getAttribute("data-width");
     check.setAttribute("checked", "checked");
    }

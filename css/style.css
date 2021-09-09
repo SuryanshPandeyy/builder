@@ -8,36 +8,38 @@
 html {
  font-size: 62.5%;
  height: 100%;
- width: 100%;
 }
 
 body {
  background-color: rgb(183, 183, 183);
  height: 100%;
- width: 100vw;
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+ width: 100%;
  overflow: auto;
 }
 
 .wrapper {
  width: 100%;
- z-index: 20;
+ min-width: 100%;
+ max-width: 100%;
+ z-index: 40;
  display: flex;
  align-items: center;
  justify-content: space-between;
  padding: 1rem;
  background-color: grey;
+ position: relative;
 }
 
 .wrapper * {
  font-size: 2rem;
 }
 
+.name {
+ color: #fff;
+}
+
 .wrapper .device {
- color: white;
+ color: #fff;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -50,7 +52,8 @@ body {
   align-items: center;
   justify-content: center;
  }
- .mobileOptions{
+
+ .mobileOptions {
   display: none;
  }
 }
@@ -65,6 +68,7 @@ body {
  display: flex;
  align-items: center;
  justify-content: center;
+ color: #fff;
 }
 
 
@@ -75,8 +79,6 @@ body {
 }
 
 section {
- width: 100%;
- overflow: auto;
  background-color: rgb(255, 255, 255);
  height: 100%;
 }
@@ -93,18 +95,22 @@ section {
  .desktopOptions {
   display: none;
  }
- .mobileOptions{
+
+ .mobileOptions {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  position: absolute;
+
+ }
+
+ .mobileOptions .bars {
   position: absolute;
   right: 0;
-  height: 100%;
- }
- .mobileOptions .bars{
-  margin:1rem 2rem;
-  color: white;
+  margin: 1rem 2rem;
+  color: rgb(255, 255, 255);
   cursor: pointer;
-  background-color:transparent;
+  background-color: transparent;
   width: 4rem;
   height: 4rem;
   display: flex;
@@ -112,43 +118,53 @@ section {
   justify-content: center;
  }
 
- .mobileOptions .bars:hover{
+ .mobileOptions .bars:hover {
   background-color: rgb(85, 85, 85);
  }
 
- .mobileOptions ul{
-  color: black;
-  list-style: none;
-  right: -100vw;
-  width: 10rem;
-  height: 100%;
-  position: absolute;
-  background-color: rgb(250, 250, 250);
+ .mobileOptions ul {
+  display: none;
+  opacity: 0;
   transition: all 0.2s linear;
+  position: absolute;
+  list-style: none;
  }
- .mobileOptions ul.showMenu{
+
+ .mobileOptions ul.showMenu {
+  color: black;
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  left: -10px;
   right: 0;
+  opacity: 1;
  }
- .blocker{
+
+ .blocker {
   display: none;
   position: fixed;
-  inset:0;
-  background-color: rgba(128, 128, 128, 0.834);  
+  inset: 0;
+  background-color: rgba(128, 128, 128, 0.834);
  }
- .blocker.showBlocker{
+
+ .blocker.showBlocker {
   display: block;
  }
- .mobileOptions ul li{
-   margin: 2rem 0;
-   width: 4rem;
-   height: 5rem;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   cursor: pointer;
+
+ .mobileOptions ul li {
+  margin: 2rem 0;
+  width: 4rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
  }
- .mobileOptions ul li:hover{
+
+ .mobileOptions ul li:hover {
   background-color: grey;
-  color: white;
+  color: #fff;
  }
 }
