@@ -51,4 +51,12 @@ $('.blocker').on('click', () => {
  $('.mobileOptions ul').removeClass('showMenu');
  $('.blocker').removeClass('showBlocker');
  $('body').css('overflow', 'auto');
+});
+
+$('.compBtn').on('click', () => {
+  // console.log("helo");
+  $('#compBox').addClass('showComp');
+})
+$('.close').on('click', () => {
+  $('#compBox').removeClass('showComp');
 })

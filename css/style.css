@@ -16,10 +16,10 @@ body {
  width: 100%;
 }
 
-.frame{
- display:flex;
- align-items:center;
- justify-content:center;
+.frame {
+ display: flex;
+ align-items: center;
+ justify-content: center;
  width: 100%;
  min-width: fit-content;
  overflow: auto;
@@ -100,7 +100,49 @@ section {
  background-color: rgb(48, 48, 48) !important;
 }
 
-@media only screen and (max-width: 567px) {
+#compBox {
+ display: none;
+ transition: all .2s linear;
+ position: absolute;
+ top: -100vw;
+ background-color: rgb(255, 255, 255);
+ border: .5rem solid grey;
+ min-height: 20rem;
+ width: 100%;
+ z-index: 50;
+}
+#compBox .close{
+ position: absolute;
+ right: 0;
+ margin: 1rem;
+ cursor: pointer;
+ width: 4rem;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 4rem;
+}
+#compBox .close i{
+ font-size:2.5rem;
+}
+#compBox .close:hover{
+ background-color: rgb(85, 85, 85);
+ color: white;
+}
+
+#compBox.showComp {
+ display: block;
+ inset: 5rem 0;
+
+}
+
+.opt div:hover,
+.opt li:hover {
+ background-color: rgb(85, 85, 85);
+}
+
+
+@media only screen and (max-width: 568px) {
  .desktopOptions {
   display: none;
  }
