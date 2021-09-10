@@ -9,10 +9,13 @@ html {
  font-size: 62.5%;
  height: 100%;
 }
+a{
+ text-decoration: none;
+}
 
 body {
  background-color: rgb(183, 183, 183);
- height: 100%;
+ min-height: 100%;
  width: 100%;
 }
 
@@ -23,7 +26,6 @@ body {
  width: 100%;
  height: 100%;
  min-width: fit-content;
- overflow: auto;
 }
 
 .wrapper {
@@ -89,8 +91,10 @@ body {
 
 section {
  background-color: rgb(255, 255, 255);
- height: 100%;
+ min-height: 100vh;
+ height: fit-content;
  padding: 2rem;
+  overflow-x: hidden;
 }
 
 .deviceCheckbox {
@@ -194,14 +198,14 @@ section {
   opacity: 1;
  }
 
- .blocker {
+ .blocker{
   display: none;
   position: fixed;
   inset: 0;
   background-color: rgba(128, 128, 128, 0.834);
  }
 
- .blocker.showBlocker {
+ .blocker.showBlocker{
   display: block;
  }
 
@@ -221,8 +225,40 @@ section {
  }
 }
 
-.components #drag1{
- width: 10rem;
- height: 10rem;
+
+.components{
+ position: absolute;
+}
+
+.code{
+ display: none;
+}
+
+.code.showCode{
+ position: absolute;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ height: 100vh;
+}
+
+.htmlCode{
+ z-index: 200;
  border: .3rem solid black;
+ width: 60rem;
+ max-width: 90vw;
+ height: fit-content;
+ background-color: white;
+}
+
+.blockerCode {
+ display: none;
+ position: fixed;
+ inset: 0;
+ background-color: rgba(128, 128, 128, 0.834);
+}
+
+.blockerCode.showBlockerCode {
+ display: block;
 }
